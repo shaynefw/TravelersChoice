@@ -1,5 +1,5 @@
 # TravelersChoice
-      
+
 ## Description
 
 ## Table of Contents
@@ -23,6 +23,8 @@
 
 ## License
 
+MIT
+
 ## Badges
 
 ![HTML](https://img.shields.io/badge/HTML-NUMBER%25-orange)
@@ -36,6 +38,5 @@
 ## Tests
 
 ## Questions
-  
+
 If you have any questions you can reach us by...
-  
