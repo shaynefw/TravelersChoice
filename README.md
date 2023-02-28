@@ -4,6 +4,8 @@
 
 ## Description
 
+A travel destination review website is a platform where people can share their experiences and opinions about different travel destinations around the world. 
+
 ## Table of Contents
 
 - [Installation](#installation)
