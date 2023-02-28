@@ -1,5 +1,7 @@
 # TravelersChoice
-      
+
+## Members
+
 ## Description
 
 ## Table of Contents
@@ -36,6 +38,5 @@
 ## Tests
 
 ## Questions
-  
+
 If you have any questions you can reach us by...
-  
