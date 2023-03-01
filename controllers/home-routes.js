@@ -89,9 +89,9 @@ router.get('/dashboard/review', withAuth, (req, res) => { // withAuth: only if u
 // GET for edit review page ('/dashboard/review/:id')
 router.get('/dashboard/review/:id', withAuth, async (req, res) => {  // withAuth: only if user is logged in, the callback function is executed
   try {
-    const dbPostData = await Post.findByPk(req.params.id, {});
-    const post = dbPostData.get({ plain: true });
-    res.render('editpost', { post, loggedIn: req.session.loggedIn });
+    const dbReviewData = await Review.findByPk(req.params.id, {});
+    const review = dbReviewData.get({ plain: true });
+    res.render('edit-review', { review, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
