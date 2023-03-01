@@ -3,6 +3,9 @@ const router = require('express').Router();
 const { User, Country, Review } = require('../models');
 const withAuth = require('../utils/auth'); // Custom middleware for authentification
 
+// TEST
+const sequelize = require('../config/connection');
+
 
 // GET for homepage ('/')
 router.get('/', async (req, res) => {
@@ -11,11 +14,13 @@ router.get('/', async (req, res) => {
     //   group: ['country_id'],
     //   attributes: ['country_id', [sequelize.fn('COUNT', 'country_id'), 'count']],
     // });
-    const dbTopCountryData = await sequelize.query("SELECT ROW_NUMBER() OVER(ORDER BY COUNT(country_id) DESC) top, country_id, COUNT(country_id), FROM review");
-    const countriesTop = dbTopCountryData.map((country) => country.get({ plain: true }));
-    const top1 = countriesTop[0].country_id;
-    const top2 = countriesTop[1].country_id;
-    const top3 = countriesTop[2].country_id;
+    
+    const dbTopCountryData = await sequelize.query("SELECT ROW_NUMBER() OVER(ORDER BY COUNT(country_id) DESC) top, country_id, COUNT(country_id) FROM review GROUP BY country_id");       
+    // const countriesTop = dbTopCountryData.map((country) => country.get({ plain: true })); // THIS .get METHOD IS NOT NECESSARY WHEN USING RAW QUERY
+    
+    const top1 = dbTopCountryData[0][0].country_id;
+    const top2 = dbTopCountryData[0][1].country_id;
+    const top3 = dbTopCountryData[0][2].country_id;
 
     const dbReviewTop1Data = await Review.findAll({
       include: [{
@@ -50,7 +55,10 @@ router.get('/', async (req, res) => {
 
     // COMMENTING OUR FOR TESTING 
     // res.render('homepage', { countriesTop, reviewsTop1, reviewsTop2, reviewsTop3, loggedIn: req.session.loggedIn });
-    console.log(countriesTop); // FOR A TEST PURPOSE
+    console.log(dbTopCountryData); // FOR A TEST PURPOSE
+    console.log(top1); // FOR A TEST PURPOSE
+    console.log(top2); // FOR A TEST PURPOSE
+    console.log(top3); // FOR A TEST PURPOSE
     console.log(reviewsTop1); // FOR A TEST PURPOSE
     console.log(reviewsTop2); // FOR A TEST PURPOSE
     console.log(reviewsTop3); // FOR A TEST PURPOSE
