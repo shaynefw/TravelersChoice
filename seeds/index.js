@@ -1,16 +1,16 @@
-const sequelize = require('../config/connection');
-const seedUsers = require('./userData');
-const seedPosts = require('./postData');
-const seedComments = require('./commentData');
+const sequelize = require("../config/connection");
+const { seedCountries } = require("./countryData");
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
 
-  await seedUsers();
-
-  await seedPosts();
-
-  await seedComments();
+  try {
+    await seedCountries();
+  } catch (err) {
+    err
+      ? console.log(err)
+      : console.log("\x1b[32m%s\x1b[0m", "<----- COUNTRIES SEEDED! ----->");
+  }
 
   process.exit(0);
 };
