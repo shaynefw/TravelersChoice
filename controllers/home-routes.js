@@ -24,16 +24,16 @@ router.get('/', async (req, res) => {
 // GET for country page ('/country/:id')
 router.get('/country/:id', async (req, res) => {
   try {
-    const dbPostData = await Post.findByPk(req.params.id, {
+    const dbReviewData = await Review.findAll({
       include: [{
-        model: Comment,
-        include: [{
-          model: User,
-        }]
-      }, { model: User }],
+        model: Country
+      }],
+      where: {
+        country_id: req.params.id,
+      }, 
     });
-    const post = dbPostData.get({ plain: true });
-    res.render('post', { post, loggedIn: req.session.loggedIn, commenter: "Commenter" });
+    const reviews = dbReviewData.map((review) => review.get({ plain: true }));
+    res.render('country', { reviews, loggedIn: req.session.loggedIn});
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
