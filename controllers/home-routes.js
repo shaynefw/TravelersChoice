@@ -7,14 +7,54 @@ const withAuth = require('../utils/auth'); // Custom middleware for authentifica
 // GET for homepage ('/')
 router.get('/', async (req, res) => {
   try {
-    const dbTopCountryData = await Review.findAll({
+    // const dbTopCountryData = await Review.findAll({
+    //   group: ['country_id'],
+    //   attributes: ['country_id', [sequelize.fn('COUNT', 'country_id'), 'count']],
+    // });
+    const dbTopCountryData = await sequelize.query("SELECT ROW_NUMBER() OVER(ORDER BY COUNT(country_id) DESC) top, country_id, COUNT(country_id), FROM review");
+    const countriesTop = dbTopCountryData.map((country) => country.get({ plain: true }));
+    const top1 = countriesTop[0].country_id;
+    const top2 = countriesTop[1].country_id;
+    const top3 = countriesTop[2].country_id;
+
+    console.log(countriesTop); // FOR A TEST PURPOSE
+
+    const dbReviewTop1Data = await Review.findAll({
       include: [{
-          model: User,
-          attributes: ['username'],
-        }],
+        model: Country
+      }],
+      where: {
+        country_id: top1,
+      }, 
     });
-    const posts = dbPostData.map((post) => post.get({ plain: true }));
-    res.render('homepage', { posts, loggedIn: req.session.loggedIn });
+
+    const dbReviewTop2Data = await Review.findAll({
+      include: [{
+        model: Country
+      }],
+      where: {
+        country_id: top2,
+      }, 
+    });
+
+    const dbReviewTop3Data = await Review.findAll({
+      include: [{
+        model: Country
+      }],
+      where: {
+        country_id: top3,
+      }, 
+    });
+
+    const reviewsTop1 = dbReviewTop1Data.map((review) => review.get({ plain: true }));
+    const reviewsTop2 = dbReviewTop2Data.map((review) => review.get({ plain: true }));
+    const reviewsTop3 = dbReviewTop3Data.map((review) => review.get({ plain: true }));
+
+    console.log(reviewsTop1); // FOR A TEST PURPOSE
+    console.log(reviewsTop2); // FOR A TEST PURPOSE
+    console.log(reviewsTop3); // FOR A TEST PURPOSE
+
+    res.render('homepage', { countriesTop, reviewsTop1, reviewsTop2, reviewsTop3, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
