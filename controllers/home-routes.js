@@ -10,13 +10,8 @@ const sequelize = require('../config/connection');
 // GET for homepage ('/')
 router.get('/', async (req, res) => {
   try {
-    // const dbTopCountryData = await Review.findAll({
-    //   group: ['country_id'],
-    //   attributes: ['country_id', [sequelize.fn('COUNT', 'country_id'), 'count']],
-    // });
-    
     const dbTopCountryData = await sequelize.query("SELECT ROW_NUMBER() OVER(ORDER BY COUNT(country_id) DESC) top, country_id, COUNT(country_id) FROM review GROUP BY country_id");       
-    // const countriesTop = dbTopCountryData.map((country) => country.get({ plain: true })); // THIS .get METHOD IS NOT NECESSARY WHEN USING RAW QUERY
+    // .get METHOD IS NOT NECESSARY WHEN USING RAW QUERY
     
     const top1 = dbTopCountryData[0][0].country_id;
     const top2 = dbTopCountryData[0][1].country_id;
@@ -54,15 +49,15 @@ router.get('/', async (req, res) => {
     const reviewsTop3 = dbReviewTop3Data.map((review) => review.get({ plain: true }));
 
     // COMMENTING OUR FOR TESTING 
-    // res.render('homepage', { countriesTop, reviewsTop1, reviewsTop2, reviewsTop3, loggedIn: req.session.loggedIn });
-    console.log(dbTopCountryData); // FOR A TEST PURPOSE
-    console.log(top1); // FOR A TEST PURPOSE
-    console.log(top2); // FOR A TEST PURPOSE
-    console.log(top3); // FOR A TEST PURPOSE
-    console.log(reviewsTop1); // FOR A TEST PURPOSE
-    console.log(reviewsTop2); // FOR A TEST PURPOSE
-    console.log(reviewsTop3); // FOR A TEST PURPOSE
-    res.status(200).json("Success!");
+    // console.log(dbTopCountryData); // FOR A TEST PURPOSE
+    // console.log(top1); // FOR A TEST PURPOSE
+    // console.log(top2); // FOR A TEST PURPOSE
+    // console.log(top3); // FOR A TEST PURPOSE
+    // console.log(reviewsTop1); // FOR A TEST PURPOSE
+    // console.log(reviewsTop2); // FOR A TEST PURPOSE
+    // console.log(reviewsTop3); // FOR A TEST PURPOSE
+    // res.status(200).json("Success!");
+    res.render('homepage', { dbTopCountryData, reviewsTop1, reviewsTop2, reviewsTop3, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -83,9 +78,9 @@ router.get('/country/:id', async (req, res) => {
     const reviews = dbReviewData.map((review) => review.get({ plain: true }));
 
     // COMMENTING OUR FOR TESTING 
-    // res.render('country', { reviews, loggedIn: req.session.loggedIn});
-    console.log(reviews);
-    res.status(200).json("Success!");
+    // console.log(reviews);
+    // res.status(200).json("Success!");
+    res.render('country', { reviews, loggedIn: req.session.loggedIn});
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -125,9 +120,9 @@ router.get('/dashboard', withAuth, async (req, res) => { // withAuth: only if us
     });
     const reviews = dbReviewData.map((review) => review.get({ plain: true }));
     // COMMENTING OUR FOR TESTING 
-    // res.render('dashboard', { reviews, loggedIn: req.session.loggedIn });
-    console.log(reviews);
-    res.status(200).json("Success!");
+    // console.log(reviews);
+    // res.status(200).json("Success!");
+    res.render('dashboard', { reviews, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -138,8 +133,9 @@ router.get('/dashboard', withAuth, async (req, res) => { // withAuth: only if us
 // GET for create new review page ('/dashboard/review')
 router.get('/dashboard/review', withAuth, (req, res) => { // withAuth: only if user is logged in, the callback function is executed
   // COMMENTING OUR FOR TESTING 
-  // res.render('create-review', { loggedIn: req.session.loggedIn });
-  res.status(200).json("Success!");
+  // res.status(200).json("Success!");
+  res.render('create-review', { loggedIn: req.session.loggedIn });
+
 });
 
 
@@ -149,9 +145,9 @@ router.get('/dashboard/review/:id', withAuth, async (req, res) => {  // withAuth
     const dbReviewData = await Review.findByPk(req.params.id, {});
     const review = dbReviewData.get({ plain: true });
     // COMMENTING OUR FOR TESTING 
-    // res.render('edit-review', { review, loggedIn: req.session.loggedIn });
-    console.log(review);
-    res.status(200).json("Success!");
+    // console.log(review);
+    // res.status(200).json("Success!");
+    res.render('edit-review', { review, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -161,9 +157,9 @@ router.get('/dashboard/review/:id', withAuth, async (req, res) => {  // withAuth
 
 // GET for login page ('/login')
 router.get('/login', (req, res) => {
-  // COMMENTING OUR FOR TESTING 
-  // res.render('login', { loggedIn: req.session.loggedIn });
-  res.status(200).json("Success!");
+  // COMMENTING OUR FOR TESTING
+  // res.status(200).json("Success!"); 
+  res.render('login', { loggedIn: req.session.loggedIn });
 });
 
 
