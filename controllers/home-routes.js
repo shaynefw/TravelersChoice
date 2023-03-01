@@ -17,8 +17,6 @@ router.get('/', async (req, res) => {
     const top2 = countriesTop[1].country_id;
     const top3 = countriesTop[2].country_id;
 
-    console.log(countriesTop); // FOR A TEST PURPOSE
-
     const dbReviewTop1Data = await Review.findAll({
       include: [{
         model: Country
@@ -50,11 +48,13 @@ router.get('/', async (req, res) => {
     const reviewsTop2 = dbReviewTop2Data.map((review) => review.get({ plain: true }));
     const reviewsTop3 = dbReviewTop3Data.map((review) => review.get({ plain: true }));
 
+    // COMMENTING OUR FOR TESTING 
+    // res.render('homepage', { countriesTop, reviewsTop1, reviewsTop2, reviewsTop3, loggedIn: req.session.loggedIn });
+    console.log(countriesTop); // FOR A TEST PURPOSE
     console.log(reviewsTop1); // FOR A TEST PURPOSE
     console.log(reviewsTop2); // FOR A TEST PURPOSE
     console.log(reviewsTop3); // FOR A TEST PURPOSE
-
-    res.render('homepage', { countriesTop, reviewsTop1, reviewsTop2, reviewsTop3, loggedIn: req.session.loggedIn });
+    res.status(200).json("Success!");
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -73,13 +73,18 @@ router.get('/country/:id', async (req, res) => {
       }, 
     });
     const reviews = dbReviewData.map((review) => review.get({ plain: true }));
-    res.render('country', { reviews, loggedIn: req.session.loggedIn});
+
+    // COMMENTING OUR FOR TESTING 
+    // res.render('country', { reviews, loggedIn: req.session.loggedIn});
+    console.log(reviews);
+    res.status(200).json("Success!");
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
 
+// FUTURE DEVERLOPMENT
 // GET for Review page ('/review/:id')  
 // router.get('/review/:id', async (req, res) => {
 //   try {
@@ -111,7 +116,10 @@ router.get('/dashboard', withAuth, async (req, res) => { // withAuth: only if us
       },
     });
     const reviews = dbReviewData.map((review) => review.get({ plain: true }));
-    res.render('dashboard', { reviews, loggedIn: req.session.loggedIn });
+    // COMMENTING OUR FOR TESTING 
+    // res.render('dashboard', { reviews, loggedIn: req.session.loggedIn });
+    console.log(reviews);
+    res.status(200).json("Success!");
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -121,7 +129,9 @@ router.get('/dashboard', withAuth, async (req, res) => { // withAuth: only if us
 
 // GET for create new review page ('/dashboard/review')
 router.get('/dashboard/review', withAuth, (req, res) => { // withAuth: only if user is logged in, the callback function is executed
-  res.render('create-review', { loggedIn: req.session.loggedIn });
+  // COMMENTING OUR FOR TESTING 
+  // res.render('create-review', { loggedIn: req.session.loggedIn });
+  res.status(200).json("Success!");
 });
 
 
@@ -130,7 +140,10 @@ router.get('/dashboard/review/:id', withAuth, async (req, res) => {  // withAuth
   try {
     const dbReviewData = await Review.findByPk(req.params.id, {});
     const review = dbReviewData.get({ plain: true });
-    res.render('edit-review', { review, loggedIn: req.session.loggedIn });
+    // COMMENTING OUR FOR TESTING 
+    // res.render('edit-review', { review, loggedIn: req.session.loggedIn });
+    console.log(review);
+    res.status(200).json("Success!");
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -140,7 +153,9 @@ router.get('/dashboard/review/:id', withAuth, async (req, res) => {  // withAuth
 
 // GET for login page ('/login')
 router.get('/login', (req, res) => {
-  res.render('login', { loggedIn: req.session.loggedIn });
+  // COMMENTING OUR FOR TESTING 
+  // res.render('login', { loggedIn: req.session.loggedIn });
+  res.status(200).json("Success!");
 });
 
 
