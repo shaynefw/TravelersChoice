@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS travelerschoice;
+DROP DATABASE IF EXISTS travelerschoice_db;
 
-CREATE DATABASE travelerschoice;
+CREATE DATABASE travelerschoice_db;
