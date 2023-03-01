@@ -43,12 +43,12 @@ router.put('/:id', async (req, res) => {
 // Delete review
 router.delete('/:id', async (req, res) => {
   try {
-  const dbPostData = await Post.destroy({
+  const dbReviewData = await Review.destroy({
     where: {
       id: req.params.id
     }
   });
-  res.status(200).json(dbPostData);
+  res.status(200).json(dbReviewData);
   } catch (err) {
     res.status(500).json(err);
   }
