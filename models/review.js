@@ -1,9 +1,9 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
-class Post extends Model {}
+class Review extends Model {}
 
-Post.init(
+Review.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,29 +11,52 @@ Post.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
-      type: DataTypes.STRING,
+    user_id: {
+      type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
+    country_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "country",
+        key: "id",
+      },
     },
     content: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    user_id: {
+    rating: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
+      allowNull: false,
     },
+    /*advice: {
+      type: DataTypes.STRING,
+    },
+    year: {
+      type: DataTypes.INTEGER,
+    },
+    month: {
+      type: DataTypes.INTEGER,
+    },
+    length: {
+      type: DataTypes.INTEGER,
+    },
+    group: {
+      type: DataTypes.INTEGER,
+    },*/
   },
   {
     sequelize,
-    timestamps: true, // Show createdAt and updatedAt
     freezeTableName: true,
     underscored: true,
-    modelName: 'post',
+    modelName: "review",
   }
 );
 
-module.exports = Post;
+module.exports = Review;
