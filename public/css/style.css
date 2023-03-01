@@ -187,3 +187,10 @@ header {
   color: var(--secondary);
   background-color: var(--primary);
 }
+/*footer*/
+footer {
+  padding: 10px;
+  text-align: center;
+  background: var(--primary);
+  color: var(--light);
+}
