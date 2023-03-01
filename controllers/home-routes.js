@@ -62,17 +62,16 @@ router.get('/country/:id', async (req, res) => {
 // GET for dashboard page ('/dashboard')
 router.get('/dashboard', withAuth, async (req, res) => { // withAuth: only if user is logged in, the callback function is executed
   try {
-    const dbPostData = await Post.findAll({
+    const dbReviewData = await Review.findAll({
       include: [{
-        model: User,
-        attributes: ['username'],
+        model: Country
       }],
       where: {
         user_id: req.session.user_id,
       },
     });
-    const posts = dbPostData.map((post) => post.get({ plain: true }));
-    res.render('dashboard', { posts, loggedIn: req.session.loggedIn });
+    const reviews = dbReviewData.map((review) => review.get({ plain: true }));
+    res.render('dashboard', { reviews, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
