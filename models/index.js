@@ -1,6 +1,7 @@
 const User = require("./User");
 const Country = require("./Country");
 const Review = require("./Review");
+
 //one to many relationship
 User.hasMany(Review, {
   foreignKey: "user_id",

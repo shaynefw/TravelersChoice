@@ -7,11 +7,11 @@ const seedAll = async () => {
   await sequelize.sync({ force: true });
 
   try {
-    await seedCountries();
+    await seedCountries().then(() => {
+      console.log("\x1b[32m%s\x1b[0m", "<----- COUNTRIES SEEDED! ----->");
+    });
   } catch (err) {
-    err
-      ? console.log(err)
-      : console.log("\x1b[32m%s\x1b[0m", "<----- COUNTRIES SEEDED! ----->");
+    console.log(err);
   }
 
   // ONLY FOR TESTING

@@ -84,11 +84,11 @@ header {
 }
 
 .card a {
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 /* Form (add a post/comment, edit post, user login/signup) */
@@ -104,7 +104,11 @@ header {
   color: var(--light);
 }
 
-#content-newcomment, #title-newpost, #content-newpost, #title-updatepost, #content-updatepost {
+#content-newcomment,
+#title-newpost,
+#content-newpost,
+#title-updatepost,
+#content-updatepost {
   width: 95%;
   padding: 2px;
   margin: 5px;
@@ -135,7 +139,7 @@ header {
   text-align: center;
   border: solid black;
   background-color: var(--primary);
-  color: var(--light)
+  color: var(--light);
 }
 
 .form-group {
@@ -147,10 +151,13 @@ header {
   text-align: center;
   border: solid black;
   background-color: rgb(77, 70, 70);
-  color: var(--light)
+  color: var(--light);
 }
 
-#username-login, #password-login, #username-signup, #password-signup {
+#username-login,
+#password-login,
+#username-signup,
+#password-signup {
   width: 30%;
   padding: 2px;
   margin: 5px;
