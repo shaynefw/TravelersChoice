@@ -82,7 +82,7 @@ router.get('/dashboard', withAuth, async (req, res) => { // withAuth: only if us
 
 // GET for create new review page ('/dashboard/review')
 router.get('/dashboard/review', withAuth, (req, res) => { // withAuth: only if user is logged in, the callback function is executed
-  res.render('newpost', { loggedIn: req.session.loggedIn });
+  res.render('create-review', { loggedIn: req.session.loggedIn });
 });
 
 
