@@ -1,5 +1,5 @@
 const sequelize = require("../config/connection");
-const { seedCountries } = require("./countryData");
+const seedCountries = require("./countryData");
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
