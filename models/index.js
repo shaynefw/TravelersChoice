@@ -1,8 +1,8 @@
 const User = require("./User");
-const Review = require("./Review");
 const Country = require("./Country");
+const Review = require("./Review");
 
-// One to Many relationship between User and Post
+//one to many relationship
 User.hasMany(Review, {
   foreignKey: "user_id",
 });
@@ -10,8 +10,7 @@ User.hasMany(Review, {
 Review.belongsTo(User, {
   foreignKey: "user_id",
 });
-
-// One to Many relationship between User and Comment
+//one to many relationship
 Country.hasMany(Review, {
   foreignKey: "country_id",
 });
