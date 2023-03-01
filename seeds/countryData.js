@@ -20,3 +20,7 @@ const countryData = [
     country_image: "./images/countries/united-states/us-img.jpeg",
   },
 ];
+
+const seedCountries = () => Country.bulkCreate(countryData);
+
+module.exports = seedCountries;
