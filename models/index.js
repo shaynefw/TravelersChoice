@@ -14,7 +14,7 @@ Country.hasMany(Review, {
   foreignKey: "country_id",
 });
 
-Country.belongsTo(Review, {
+Review.belongsTo(Country, {
   foreignKey: "country_id",
 });
 
