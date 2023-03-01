@@ -2,13 +2,14 @@ const router = require('express').Router();
 const { Post } = require('../../models');
 
 
-// Create new comment
+// Create new review
 router.post('/', async (req, res) => {
   try {
-    const dbPostData = await Post.create({
-      title: req.body.title,
-      content: req.body.content,
+    const dbReviewData = await Review.create({
+      country_id: req.body.country_id,
       user_id: req.session.user_id,
+      content: req.body.content,
+      rating: req.body.rating,
     });
     res.status(200).json(dbPostData);
   } catch (err) {
