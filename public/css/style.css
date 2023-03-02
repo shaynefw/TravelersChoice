@@ -1,17 +1,16 @@
 /* General  */
-/* :root {
+ :root {
   --primary: #030929;
   --secondary: #80bdfa;
   --tertiary: #3e5b9f;
   --light: #ffffff;
 }
 
-* {
+ {
   font-family: Arial;
   margin: 0%;
-} */
+} 
 
-<<<<<<< HEAD
 /* Nav & Header */
 nav {
   margin: 0%;
@@ -39,10 +38,7 @@ header {
   background: var(--primary);
   color: var(--light);
 }
-*/
-/***************************************************/
-=======
->>>>>>> main
+
 /* Main */
 .main {
   background-color: #fff;
@@ -51,8 +47,6 @@ header {
   align-items: center;
 }
 
-<<<<<<< HEAD
-=======
 /* Post & Comment cards */
 .country-card {
   position: relative;
@@ -66,7 +60,6 @@ header {
   height: 100%;
 }
 
->>>>>>> main
 /*footer*/
 footer {
   padding: 10px;
@@ -76,6 +69,3 @@ footer {
 <<<<<<< HEAD
   min-height: 50px;
 }
-=======
-}
->>>>>>> main
