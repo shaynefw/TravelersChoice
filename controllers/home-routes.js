@@ -159,23 +159,35 @@ router.get('/dashboard', withAuth, async (req, res) => { // withAuth: only if us
 
 
 // GET for create new review page ('/dashboard/review')
-router.get('/dashboard/review', withAuth, (req, res) => { // withAuth: only if user is logged in, the callback function is executed
-  // COMMENTING OUR FOR TESTING 
-  // res.status(200).json("Success!");
-  res.render('create-review', { loggedIn: req.session.loggedIn });
-
+router.get('/dashboard/review', withAuth, async (req, res) => { // withAuth: only if user is logged in, the callback function is executed
+  try {
+    const countryList = await Country.findAll();
+    const countries = countryList.map((country) => country.get({ plain: true }));
+    console.log(countries);
+    res.render('create-review', { countries, loggedIn: req.session.loggedIn });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 
 // GET for edit review page ('/dashboard/review/:id')
 router.get('/dashboard/review/:id', withAuth, async (req, res) => {  // withAuth: only if user is logged in, the callback function is executed
   try {
-    const dbReviewData = await Review.findByPk(req.params.id, {});
+    const dbReviewData = await Review.findByPk(req.params.id, {
+      include: [{
+        model: Country
+      }],
+    });
+    const countryList = await Country.findAll();
     const review = dbReviewData.get({ plain: true });
+    const countries = countryList.map((country) => country.get({ plain: true }));
     // COMMENTING OUR FOR TESTING 
     // console.log(review);
     // res.status(200).json("Success!");
-    res.render('edit-review', { review, loggedIn: req.session.loggedIn });
+    console.log(review);
+    res.render('edit-review', { review, countries, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

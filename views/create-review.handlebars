@@ -1,0 +1,26 @@
+<section class="create_review_section">
+  <h2>Create review</h2>  
+  <h3>Your new review</h3>
+  <form>
+    <label for="country">Choose a country:</label>
+    <select id="" name="country">
+      {{#each countries as |country|}}
+      {{> dashboard-countries}}
+      {{/each}}
+    </select><br>
+    <label for="rating">Rating: 5 to 1</label>
+    <select id="" name="rating">
+      <option value=5>5 - ★★★★★</option>
+      <option value=4>4 - ★★★★☆</option>
+      <option value=3>3 - ★★★☆☆</option>
+      <option value=2>2 - ★★☆☆☆</option>
+      <option value=1>1 - ★☆☆☆☆</option>
+    </select><br>
+    <label>Review</label><br>
+    <textarea id="" name="" rows="2" cols="50"></textarea><br>
+    <button id="edit_review" class="btn_edit_review">
+      Submit
+    </button>
+  </form>
+</section>
+<script src="./js/review.js"></script>

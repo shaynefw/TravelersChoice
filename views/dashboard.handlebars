@@ -4,12 +4,12 @@
   <div>
     <h2>List Of Your Reviews</h2>
     <div>
-  {{#each reviews as |review|}}
-  {{> dashboard-reviews}}
-{{/each}}
+    {{#each reviews as |review|}}
+    {{> dashboard-reviews}}
+    {{/each}}
     </div>
   </div>
-  <button id="newpost" class="btn-new-post">
-    <a href="/dashboard/newpost">Create a new post</a>
+  <button id="createreview" class="btn-new-post">
+    <a href="/dashboard/review">Create a new review</a>
   </button>
 </section>

@@ -1,8 +1,12 @@
-<h3>{{content}} </h3>
-<p>Rating: {{rating}}</p>
+<h3>Country: {{country.name}}</h3>
+<h3>Rating: {{rating}} {{rating_stars rating}}</h3>
+<h3>Review:</h3>
+<p>{{content}}</p>
+
 <button id="delete_review" class="btn-delete_review">
   Delete Review
 </button>
 <button id="edit_review" class="btn-edit_review">
   <a href="/dashboard/review/{{id}}"> Edit Review</a>
 </button>
+<script src="./js/review.js"></script>
