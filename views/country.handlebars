@@ -2,7 +2,7 @@
 <style>
   .country-container {
     position: relative;
-    background-image: url('{{country.photo}}');
+    background-image: url('.{{country.photo}}');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -29,7 +29,7 @@
     {{#each reviews}}
       <div class="review">
         <p>{{this.content}}</p>
-        <p>Rating: {{this.rating}}</p>
+        <p>Rating: {{rating_stars this.rating}}</p>
         <p>Review by: {{this.user.username}}</p>
       </div>
     {{/each}}
