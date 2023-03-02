@@ -1,14 +1,15 @@
 // Create new post
-const newpostFormHandler = async (event) => {
+const createReviewHandler = async (event) => {
   event.preventDefault();
 
-  const title = document.querySelector('#title-newpost').value.trim();
-  const content = document.querySelector('#content-newpost').value.trim();
+  const country_id = document.querySelector('#input-country').value;
+  const rating = document.querySelector('#input-rating').value;
+  const content = document.querySelector('#input-review').value.trim();
 
-  if (title && content) {
-    const response = await fetch('/api/post', {
+  if (country_id && rating && content) {
+    const response = await fetch('/api/review', {
       method: 'POST',
-      body: JSON.stringify({ title, content }),
+      body: JSON.stringify({ country_id, rating, content }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -20,8 +21,7 @@ const newpostFormHandler = async (event) => {
   }
 };
 
-
 // Event listeners
 document
-  .querySelector('.newpost-form')
-  .addEventListener('submit', newpostFormHandler);
+  .querySelector('.create-form')
+  .addEventListener('submit', createReviewHandler);
