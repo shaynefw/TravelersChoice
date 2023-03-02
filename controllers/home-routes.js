@@ -173,9 +173,9 @@ router.get('/login', (req, res) => {
 
 
 // GET for signup page ('/signup')
-// router.get('/signup', (req, res) => {
-//   res.render('signup', { loggedIn: req.session.loggedIn });
-// });
+router.get('/signup', (req, res) => {
+  res.render('signup', { loggedIn: req.session.loggedIn });
+});
 
 
 module.exports = router;
