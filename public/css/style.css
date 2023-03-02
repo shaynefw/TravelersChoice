@@ -16,6 +16,9 @@ nav {
   margin: 0%;
   padding: 10px;
   min-height: 50px;
+  position: sticky;
+  top: 0;
+  width: 100%;
 }
 
 nav a {
@@ -81,6 +84,17 @@ header {
   padding: 10px;
   width: 50%;
   height: 40%;
+}
+/*login page*/
+.login-signup {
+  height: 100%;
+}
+.login-signup_details {
+  border: solid var(--primary) 5px;
+  padding: 10px;
+  width: 50%;
+  height: 40%;
+  margin: 30px;
 }
 /*footer*/
 footer {
