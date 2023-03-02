@@ -7,15 +7,16 @@
   <p>{{review.content}}</p>
   <br>  
   <h3>Your updated review</h3>
+  <div id="">
   <form>
     <label for="country">Choose a country:</label>
-    <select id="" name="country">
+    <select id="input-country" name="country">
       {{#each countries as |country|}}
       {{> dashboard-countries}}
       {{/each}}
     </select><br>
     <label for="rating">Rating: 5 to 1</label>
-    <select id="" name="rating">
+    <select id="input-rating" name="rating">
       <option value=5>5 - ★★★★★</option>
       <option value=4>4 - ★★★★☆</option>
       <option value=3>3 - ★★★☆☆</option>
@@ -23,10 +24,11 @@
       <option value=1>1 - ★☆☆☆☆</option>
     </select><br>
     <label>Review</label><br>
-    <textarea id="" name="" rows="2" cols="50"></textarea><br>
+    <textarea id="input-review" name="" rows="2" cols="50"></textarea><br>
     <button id="edit_review" class="btn_edit_review">
       Submit
     </button>
   </form>
+  </div>
 </section>
 <script src="./js/review.js"></script>
