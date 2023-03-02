@@ -10,20 +10,22 @@ const sequelize = require('../config/connection');
 // GET for homepage ('/')
 router.get('/', async (req, res) => {
   try {
-    // const dbTopCountryData = await sequelize.query("SELECT ROW_NUMBER() OVER(ORDER BY COUNT(country_id) DESC) top, country_id, COUNT(country_id) FROM review GROUP BY country_id");   
-    const dbTopCountryData = await sequelize.query("SELECT ROW_NUMBER() OVER(ORDER BY AVG(rating) DESC) top, country_id, AVG(rating) FROM review GROUP BY country_id");        
+    const dbTopCountryData = await sequelize.query("SELECT ROW_NUMBER() OVER(ORDER BY AVG(rating) DESC) top, country_id, ROUND (AVG(rating),1) AS rating, COUNT(rating) AS count FROM review GROUP BY country_id");          
     // .get METHOD IS NOT NECESSARY WHEN USING RAW QUERY
     
-    const top1 = dbTopCountryData[0][0].country_id;
-    const top2 = dbTopCountryData[0][1].country_id;
-    const top3 = dbTopCountryData[0][2].country_id;
+    const statTop1 = dbTopCountryData[0][0];
+    const statTop2 = dbTopCountryData[0][1];
+    const statTop3 = dbTopCountryData[0][2];
+    // const top1 = dbTopCountryData[0][0].country_id;
+    // const top2 = dbTopCountryData[0][1].country_id;
+    // const top3 = dbTopCountryData[0][2].country_id;
 
     const dbReviewTop1Data = await Review.findAll({
       include: [{
         model: Country
       }],
       where: {
-        country_id: top1,
+        country_id: statTop1.country_id,
       }, 
     });
 
@@ -32,7 +34,7 @@ router.get('/', async (req, res) => {
         model: Country
       }],
       where: {
-        country_id: top2,
+        country_id: statTop2.country_id,
       }, 
     });
 
@@ -41,7 +43,7 @@ router.get('/', async (req, res) => {
         model: Country
       }],
       where: {
-        country_id: top3,
+        country_id: statTop3.country_id,
       }, 
     });
 
@@ -49,16 +51,22 @@ router.get('/', async (req, res) => {
     const reviewsTop2 = dbReviewTop2Data.map((review) => review.get({ plain: true }));
     const reviewsTop3 = dbReviewTop3Data.map((review) => review.get({ plain: true }));
 
+    const countryTop1 = reviewsTop1[0];
+    const countryTop2 = reviewsTop2[0];
+    const countryTop3 = reviewsTop3[0];
+
     // COMMENTING OUR FOR TESTING 
-    // console.log(dbTopCountryData); // FOR A TEST PURPOSE
-    // console.log(top1); // FOR A TEST PURPOSE
-    // console.log(top2); // FOR A TEST PURPOSE
-    // console.log(top3); // FOR A TEST PURPOSE
-    // console.log(reviewsTop1); // FOR A TEST PURPOSE
-    // console.log(reviewsTop2); // FOR A TEST PURPOSE
-    // console.log(reviewsTop3); // FOR A TEST PURPOSE
+    console.log(statTop1); // FOR A TEST PURPOSE
+    console.log(statTop2); // FOR A TEST PURPOSE
+    console.log(statTop3); // FOR A TEST PURPOSE
+    console.log(reviewsTop1); // FOR A TEST PURPOSE
+    console.log(reviewsTop2); // FOR A TEST PURPOSE
+    console.log(reviewsTop3); // FOR A TEST PURPOSE
+    console.log(countryTop1); // FOR A TEST PURPOSE
+    console.log(countryTop2); // FOR A TEST PURPOSE
+    console.log(countryTop3); // FOR A TEST PURPOSE
     // res.status(200).json("Success!");
-    res.render('homepage', { dbTopCountryData, reviewsTop1, reviewsTop2, reviewsTop3, loggedIn: req.session.loggedIn });
+    res.render('homepage', { statTop1, statTop2, statTop3, reviewsTop1, reviewsTop2, reviewsTop3, countryTop1, countryTop2, countryTop3, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -184,9 +192,9 @@ router.get('/login', (req, res) => {
 
 
 // GET for signup page ('/signup')
-// router.get('/signup', (req, res) => {
-//   res.render('signup', { loggedIn: req.session.loggedIn });
-// });
+router.get('/signup', (req, res) => {
+  res.render('signup', { loggedIn: req.session.loggedIn });
+});
 
 
 module.exports = router;
