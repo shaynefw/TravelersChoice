@@ -9,7 +9,7 @@
 * {
   font-family: Arial;
   margin: 0%;
-} 
+}
 
 /* Nav & Header */
 nav {
@@ -59,7 +59,29 @@ header {
   width: 100%;
   height: 100%;
 }
-
+.new-post-btn-section {
+  height: 100%;
+}
+.new-post-btn-section-details {
+  border: solid var(--primary) 5px;
+  padding: 10px;
+  width: 50%;
+  height: 40%;
+  margin: 30px;
+}
+.edit_review_section {
+  height: 100%;
+}
+.create_review_section {
+  height: 100%;
+  padding: 30px;
+}
+.create_review_section_details {
+  border: solid var(--primary) 5px;
+  padding: 10px;
+  width: 50%;
+  height: 40%;
+}
 /*footer*/
 footer {
   padding: 10px;
@@ -67,4 +89,7 @@ footer {
   background: var(--primary);
   color: var(--light);
   min-height: 50px;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
 }
