@@ -2,11 +2,6 @@
 <h3>Rating: {{rating}} {{rating_stars rating}}</h3>
 <h3>Review:</h3>
 <p>{{content}}</p>
-
-<button id="delete_review" class="btn-delete_review">
-  Delete Review
+<button>
+  <a href="/dashboard/review/{{id}}">🗑️ Edit/Delete this review</a>
 </button>
-<button id="edit_review" class="btn-edit_review">
-  <a href="/dashboard/review/{{id}}"> Edit Review</a>
-</button>
-<script src="./js/review.js"></script>
