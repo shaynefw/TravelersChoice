@@ -1,7 +1,7 @@
 {{!-- This is for "/dashboard" --}}
 <section class="new-post-btn-section">
 
-  <div>
+  <div class="new-post-btn-section-details">
     <h2>Share more reviews with us!</h2>
     <button>
       <a href="/dashboard/review">🆕 Create a new review</a>
@@ -9,7 +9,7 @@
   </div>
 
   {{#if reviews}}
-  <div>
+  <div class="new-post-btn-section-details">
     <h2>This is the list of your past reviews!</h2>
     <div>
     {{#each reviews as |review|}}
