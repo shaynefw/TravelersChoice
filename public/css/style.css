@@ -48,11 +48,11 @@ header {
 }
 
 /* Post & Comment cards */
-.country-card {
+.country-link {
   position: relative;
 }
 
-.country-card a {
+.country-link a {
   position: absolute;
   top: 0;
   left: 0;
