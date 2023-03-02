@@ -10,7 +10,8 @@ const sequelize = require('../config/connection');
 // GET for homepage ('/')
 router.get('/', async (req, res) => {
   try {
-    const dbTopCountryData = await sequelize.query("SELECT ROW_NUMBER() OVER(ORDER BY COUNT(country_id) DESC) top, country_id, COUNT(country_id) FROM review GROUP BY country_id");       
+    // const dbTopCountryData = await sequelize.query("SELECT ROW_NUMBER() OVER(ORDER BY COUNT(country_id) DESC) top, country_id, COUNT(country_id) FROM review GROUP BY country_id");   
+    const dbTopCountryData = await sequelize.query("SELECT ROW_NUMBER() OVER(ORDER BY AVG(rating) DESC) top, country_id, AVG(rating) FROM review GROUP BY country_id");        
     // .get METHOD IS NOT NECESSARY WHEN USING RAW QUERY
     
     const top1 = dbTopCountryData[0][0].country_id;
