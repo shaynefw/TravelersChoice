@@ -171,6 +171,7 @@ router.get('/dashboard/review', withAuth, (req, res) => { // withAuth: only if u
 router.get('/dashboard/review/:id', withAuth, async (req, res) => {  // withAuth: only if user is logged in, the callback function is executed
   try {
     const dbReviewData = await Review.findByPk(req.params.id, {});
+    const countryList = await Country.findAll();
     const review = dbReviewData.get({ plain: true });
     // COMMENTING OUR FOR TESTING 
     // console.log(review);
