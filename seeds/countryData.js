@@ -14,7 +14,7 @@ const countryData = [
     photo: "./images/countries/spain/spain-img.jpeg",
   },
   {
-    name: "United States",
+    name: "USA",
     description:
       "The United States of America (USA), commonly known as the United States (U.S. or US) or America, is a country primarily located in North America, consisting of 50 states, a federal district, five major self-governing territories, and various possessions. At 3.8 million square miles, it is the world's third or fourth-largest country by total area and is slightly smaller than the entire continent of Europe. With a population of over 327 million people, it is the third most populous country in the world. The capital is Washington, D.C., and the most populous city is New York City.",
     photo: "./images/countries/united-states/us-img.jpeg",
