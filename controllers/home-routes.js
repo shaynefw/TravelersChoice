@@ -67,20 +67,39 @@ router.get('/', async (req, res) => {
 // GET for country page ('/country/:id')
 router.get('/country/:id', async (req, res) => {
   try {
+    const countryId = req.params.id; 
+    const dbCountryData = await Country.findByPk(countryId); // get the country data
+
+    if (!dbCountryData) {
+      res.status(404).send('Country not found');
+      return;
+    } // if country not found error handling
+
+    const countryName = dbCountryData.name; // get the name of the country
     const dbReviewData = await Review.findAll({
       include: [{
         model: Country
-      }],
+      },
+    {
+      model: User
+    }
+    ],
       where: {
         country_id: req.params.id,
       }, 
     });
     const reviews = dbReviewData.map((review) => review.get({ plain: true }));
 
+    //console.log(reviews);
+
     // COMMENTING OUR FOR TESTING 
     // console.log(reviews);
     // res.status(200).json("Success!");
-    res.render('country', { reviews, loggedIn: req.session.loggedIn});
+    res.render('country', { 
+      country: { id: countryId, name: countryName }, 
+      reviews, 
+      loggedIn: req.session.loggedIn
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
