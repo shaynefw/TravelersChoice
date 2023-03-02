@@ -105,7 +105,7 @@ router.get('/country/:id', async (req, res) => {
     // console.log(reviews);
     // res.status(200).json("Success!");
     res.render('country', { 
-      country: { id: countryId, name: countryName }, 
+      country: { id: countryId, name: countryName, description: dbCountryData.description, photo: dbCountryData.photo }, 
       reviews, 
       loggedIn: req.session.loggedIn
     });
