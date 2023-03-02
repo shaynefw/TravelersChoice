@@ -1,5 +1,5 @@
 /* General  */
-:root {
+/* :root {
   --primary: #030929;
   --secondary: #80bdfa;
   --tertiary: #3e5b9f;
@@ -9,8 +9,40 @@
 * {
   font-family: Arial;
   margin: 0%;
+} */
+
+<<<<<<< HEAD
+/* Nav & Header */
+nav {
+  margin: 0%;
+  padding: 10px;
+  min-height: 50px;
 }
 
+nav a {
+  color: var(--light);
+  padding: 14px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+}
+
+nav a:hover {
+  color: var(--secondary);
+  background-color: var(--primary);
+}
+
+header {
+  padding: 10px;
+  text-align: center;
+  background: var(--primary);
+  color: var(--light);
+}
+*/
+/***************************************************/
+=======
+>>>>>>> main
 /* Main */
 .main {
   background-color: #fff;
@@ -19,6 +51,8 @@
   align-items: center;
 }
 
+<<<<<<< HEAD
+=======
 /* Post & Comment cards */
 .country-card {
   position: relative;
@@ -32,10 +66,16 @@
   height: 100%;
 }
 
+>>>>>>> main
 /*footer*/
 footer {
   padding: 10px;
   text-align: center;
   background: var(--primary);
   color: var(--light);
+<<<<<<< HEAD
+  min-height: 50px;
 }
+=======
+}
+>>>>>>> main

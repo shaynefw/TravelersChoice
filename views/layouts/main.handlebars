@@ -13,20 +13,20 @@
   </head>
 
   <body>
-    <nav>
-      <a href="/">Traveler's choice</a>
-      <a href="/dashboard">Dashboard</a>
+    <nav class="bg-dark py-3">
+      <a href="/" class="text-white">Traveler's choice</a>
+      <a href="/dashboard" class="text-white">Dashboard</a>
       {{#if loggedIn}}
         {{! When loggedin, show Logout button }}
         <button id="logout" class="logout-btn">Logout</button>
       {{else}}
         {{! When loggedout, show Login button }}
-        <a href="/login">Login</a>
+        <a href="/login" class="text-white">Login</a>
       {{/if}}
     </nav>
 
     <main>
-      <div class="main">
+      <div class="main py-5">
         {{{body}}}
       </div>
     </main>
@@ -35,9 +35,18 @@
       {{! When loggedin, Logout button is activated }}
       <script src="/js/logout.js"></script>
     {{/if}}
-    <footer>
-      <p> contact us:</p>
-      <p>social media</p>
+    <footer class="bg-dark py-3">
+      <div class="container">
+        <p class="text-white"> contact us:</p>
+        <div>
+          <p class="text-white">Github Page:
+
+          </p>
+          <a href="https://github.com/shaynefw"> sheyn</a>
+          <a href="https://github.com/mojsun"> Moji</a>
+          <a href="https://github.com/shohei-mochizuki"> shohei</a>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
