@@ -7,7 +7,7 @@
 <p>{{countryTop1.country.description}}</p><br>
 <img src="{{countryTop1.country.photo}}">
 
-<h3>Reviews [Ave. rating: {{statTop1.rating}}] [No. of reviews: {{statTop1.count}}]</h3>
+<h3>Reviews [Ave. rating: {{statTop1.rating}} {{rating_stars statTop1.rating}}] [No. of reviews: {{statTop1.count}}]</h3>
 
 {{#each reviewsTop1 as |top1|}}
 {{> homepage-reviews}}
@@ -18,7 +18,7 @@
 <p>{{countryTop2.country.description}}</p><br>
 <img src="{{countryTop2.country.photo}}">
 
-<h3>Reviews [Ave. rating: {{statTop2.rating}}] [No. of reviews: {{statTop2.count}}]</h3>
+<h3>Reviews [Ave. rating: {{statTop2.rating}} {{rating_stars statTop2.rating}}] [No. of reviews: {{statTop2.count}}]</h3>
 
 {{#each reviewsTop2 as |top2|}}
 {{> homepage-reviews}}
@@ -29,7 +29,7 @@
 <p>{{countryTop3.country.description}}</p><br>
 <img src="{{countryTop3.country.photo}}">
 
-<h3>Reviews [Ave. rating: {{statTop3.rating}}] [No. of reviews: {{statTop3.count}}]</h3>
+<h3>Reviews [Ave. rating: {{statTop3.rating}} {{rating_stars statTop3.rating}}] [No. of reviews: {{statTop3.count}}]</h3>
 
 {{#each reviewsTop3 as |top3|}}
 {{> homepage-reviews}}
