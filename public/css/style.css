@@ -1,5 +1,5 @@
 /* General  */
-:root {
+ :root {
   --primary: #030929;
   --secondary: #80bdfa;
   --tertiary: #3e5b9f;
@@ -9,7 +9,7 @@
 * {
   font-family: Arial;
   margin: 0%;
-}
+} 
 
 /* Nav & Header */
 nav {
