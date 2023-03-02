@@ -1,23 +1,29 @@
 <section class="edit_review_section">
   <h2>Edit review</h2>
+  <h3>Your original review</h3>
+  <h4>Country: {{review.country.name}}</h4>
+  <h4>Rating: {{review.rating}}{{rating_stars review.rating}}</h4>
+  <p>Review:</p>
+  <p>{{review.content}}</p>
+  <br>  
+  <h3>Your updated review</h3>
   <form>
     <label for="country">Choose a country:</label>
     <select id="" name="country">
-      <option value="volvo">Volvo</option>
-      <option value="saab">Saab</option>
-      <option value="fiat">Fiat</option>
-      <option value="audi">Audi</option>
+      {{#each countries as |country|}}
+      {{> dashboard-countries}}
+      {{/each}}
     </select><br>
     <label for="rating">Rating: 5 to 1</label>
     <select id="" name="rating">
-      <option value=5>5</option>
-      <option value=4>4</option>
-      <option value=3>3</option>
-      <option value=2>2</option>
-      <option value=1>1</option>
+      <option value=5>5 - ★★★★★</option>
+      <option value=4>4 - ★★★★☆</option>
+      <option value=3>3 - ★★★☆☆</option>
+      <option value=2>2 - ★★☆☆☆</option>
+      <option value=1>1 - ★☆☆☆☆</option>
     </select><br>
-    <label>Review</label>
-    <input type="text" placeholder="" />
+    <label>Review</label><br>
+    <textarea id="" name="" rows="2" cols="50"></textarea><br>
     <button id="edit_review" class="btn_edit_review">
       Submit
     </button>
