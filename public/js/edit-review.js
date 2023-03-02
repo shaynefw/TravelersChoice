@@ -1,19 +1,19 @@
-// Get the post ID from the endpoint
-const post_id = window.location.toString().split('/')[
- window.location.toString().split('/').length - 1];
+// Get the review ID from the endpoint
+const review_id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
 
 
 // Update the post 
-const updatepostFormHandler = async (event) => {
+const updateReviewHandler = async (event) => {
   event.preventDefault();
 
-  const title = document.querySelector('#title-updatepost').value.trim();
-  const content = document.querySelector('#content-updatepost').value.trim();
+  const country_id = document.querySelector('#input-country').value;
+  const rating = document.querySelector('#input-rating').value;
+  const content = document.querySelector('#input-review').value.trim();
 
-  if (title && content) {
-    const response = await fetch(`/api/post/${post_id}`, {
+  if (country_id && rating && content) {
+    const response = await fetch(`/api/review/${review_id}`, {
       method: 'PUT',
-      body: JSON.stringify({ title, content }),
+      body: JSON.stringify({ country_id, rating, content }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -26,11 +26,12 @@ const updatepostFormHandler = async (event) => {
 };
 
 
-// Delete the post
-const deletepostFormHandler = async (event) => {
+// Delete the review
+const deleteReviewHandler = async (event) => {
   event.preventDefault();
+  console.log('Delete button');
 
-  const response = await fetch(`/api/post/${post_id}`, {
+  const response = await fetch(`/api/review/${review_id}`, {
     method: 'DELETE',
   });
 
@@ -41,12 +42,11 @@ const deletepostFormHandler = async (event) => {
   }
 };
 
-
 // Event listeners
 document
-  .querySelector('.updatepost-form')
-  .addEventListener('submit', updatepostFormHandler);
+  .querySelector('.update-form')
+  .addEventListener('submit', updateReviewHandler);
 
 document
-  .querySelector('.deletepost-form')
-  .addEventListener('submit', deletepostFormHandler);
+  .querySelector('.delete-form')
+  .addEventListener('submit', deleteReviewHandler);

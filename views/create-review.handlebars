@@ -1,26 +1,38 @@
 <section class="create_review_section">
-  <h2>Create review</h2>  
-  <h3>Your new review</h3>
-  <form>
-    <label for="country">Choose a country:</label>
-    <select id="" name="country">
-      {{#each countries as |country|}}
-      {{> dashboard-countries}}
-      {{/each}}
-    </select><br>
-    <label for="rating">Rating: 5 to 1</label>
-    <select id="" name="rating">
-      <option value=5>5 - ★★★★★</option>
-      <option value=4>4 - ★★★★☆</option>
-      <option value=3>3 - ★★★☆☆</option>
-      <option value=2>2 - ★★☆☆☆</option>
-      <option value=1>1 - ★☆☆☆☆</option>
-    </select><br>
-    <label>Review</label><br>
-    <textarea id="" name="" rows="2" cols="50"></textarea><br>
-    <button id="edit_review" class="btn_edit_review">
-      Submit
-    </button>
-  </form>
+  <div>
+    <h2>Create review</h2>
+
+    <div>
+      <h3>Post your review on this website!</h3>
+      <form class="form create-form">
+        <div class="form-group">
+          <label>Choose a country:</label>
+          <select id="input-country">
+            {{#each countries as |country|}}
+            {{> dashboard-countries}}
+            {{/each}}
+          </select><br>
+        </div>
+        <div class="form-group">
+          <label>Rating: 5 to 1</label>
+          <select id="input-rating">
+            <option value=5>5 - ★★★★★</option>
+            <option value=4>4 - ★★★★☆</option>
+            <option value=3>3 - ★★★☆☆</option>
+            <option value=2>2 - ★★☆☆☆</option>
+            <option value=1>1 - ★☆☆☆☆</option>
+          </select><br>
+        </div>
+        <div class="form-group">
+          <label>Review</label><br>
+          <textarea id="input-review" name="" rows="2" cols="50"></textarea><br>
+        </div>
+        <div class="form-group">
+          <button class="btn-submit" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    
+  </div>
 </section>
-<script src="./js/review.js"></script>
+<script src="../../js/create-review.js"></script>
