@@ -1,15 +1,15 @@
 /* General  */
- :root {
+:root {
   --primary: #030929;
   --secondary: #80bdfa;
   --tertiary: #3e5b9f;
   --light: #ffffff;
 }
 
- {
+* {
   font-family: Arial;
   margin: 0%;
-} 
+}
 
 /* Nav & Header */
 nav {
@@ -66,6 +66,5 @@ footer {
   text-align: center;
   background: var(--primary);
   color: var(--light);
-<<<<<<< HEAD
   min-height: 50px;
 }
