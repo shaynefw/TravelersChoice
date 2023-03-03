@@ -140,3 +140,381 @@ footer {
   bottom: 0;
   width: 100%;
 }
+
+/* START OF edit-review css */
+
+/* Style for the edit review section */
+.edit_review_section {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Style for the edit review container */
+.edit_review_container {
+  width: 80%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+/* Style for the edit review title */
+.edit_review_title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Style for the original review container */
+.original_review_container {
+  margin-bottom: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 20px;
+}
+
+/* Style for the original review title */
+.original_review_title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Style for the original review details */
+.original_review_details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Style for the original review detail */
+.original_review_detail {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Style for the original review content */
+.original_review_content {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Style for the delete review container */
+.delete_review_container {
+  margin-bottom: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 20px;
+}
+
+/* Style for the delete review title */
+.delete_review_title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Style for the delete review form */
+.delete_review_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style for the delete review button container */
+.delete_review_button_container {
+  margin-top: 10px;
+}
+
+/* Style for the delete review button */
+.delete_review_button {
+  font-size: 18px;
+  background-color: #ff5252;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Style for the update review container */
+.update_review_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style for the update review title */
+.update_review_title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Style for the update review form */
+.update_review_form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style for the update review label */
+.update_review_label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Style for the update review select */
+.update_review_select {
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+}
+
+/* Style for the update review textarea */
+.update_review_textarea {
+font-size: 16px;
+padding: 10px;
+margin-bottom: 20px;
+border-radius: 5px;
+border: 2px solid #ccc;
+}
+
+/* Style for the update review button */
+.update_review_button {
+font-size: 18px;
+background-color: #64b5f6;
+color: #fff;
+border: none;
+border-radius: 5px;
+padding: 10px 20px;
+cursor: pointer;
+}
+
+/* Style for the edit review section */
+.edit_review_section {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Style for the edit review container */
+.edit_review_container {
+  width: 80%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  background-color: #f5f5f5;
+  border-radius: 10px;
+}
+
+/* Style for the edit review title */
+.edit_review_title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Style for the original review container */
+.original_review_container {
+  margin-bottom: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 20px;
+}
+
+/* Style for the original review title */
+.original_review_title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Style for the original review details */
+.original_review_details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Style for the original review detail */
+.original_review_detail {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Style for the original review content */
+.original_review_content {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* Style for the delete review container */
+.delete_review_container {
+  margin-bottom: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 20px;
+}
+
+/* Style for the delete review title */
+.delete_review_title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Style for the delete review form */
+.delete_review_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style for the delete review button container */
+.delete_review_button_container {
+  margin-top: 10px;
+}
+
+/* Style for the delete review button */
+.delete_review_button {
+  font-size: 18px;
+  background-color: #ff5252;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+/* Style for the update review container */
+.update_review_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style for the update review title */
+.update_review_title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Style for the update review form */
+.update_review_form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style for the update review label */
+.update_review_label {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+/* Style for the update review select */
+.update_review_select {
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
+}
+
+/* Style for the update review textarea */
+.update_review_textarea {
+font-size: 16px;
+padding: 10px;
+margin-bottom: 20px;
+border-radius: 5px;
+border: 2px solid #ccc;
+}
+
+/* Style for the update review button */
+.update_review_button {
+font-size: 18px;
+background-color: #64b5f6;
+color: #fff;
+border: none;
+border-radius: 5px;
+padding: 10px 20px;
+cursor: pointer;
+}
+
+/* media queries */
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 768px) {
+.edit_review_container {
+padding: 20px;
+}
+
+.original_review_details {
+font-size: 16px;
+}
+
+.original_review_content {
+font-size: 16px;
+}
+
+.delete_review_button {
+font-size: 16px;
+padding: 8px 16px;
+}
+
+.update_review_label {
+font-size: 16px;
+}
+
+.update_review_select {
+font-size: 14px;
+padding: 8px;
+margin-bottom: 16px;
+}
+
+.update_review_textarea {
+font-size: 14px;
+padding: 8px;
+margin-bottom: 16px;
+}
+
+.update_review_button {
+font-size: 16px;
+padding: 8px 16px;
+}
+}
+
+/* end of media queries */
+
+
+/* END OF edit-review css */
