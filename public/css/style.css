@@ -10,9 +10,16 @@
   font-family: Arial;
   margin: 0%;
 }
+body {
+  height: 100%;
+  overscroll-behavior-y: none;
+  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
 
 /* Nav & Header */
-nav {
+/* nav {
   margin: 0%;
   padding: 10px;
   min-height: 50px;
@@ -40,7 +47,7 @@ header {
   text-align: center;
   background: var(--primary);
   color: var(--light);
-}
+} */
 
 /* Main */
 .main {
@@ -130,7 +137,7 @@ header {
   margin: 30px;
 }
 /*footer*/
-footer {
+/* footer {
   padding: 10px;
   text-align: center;
   background: var(--primary);
@@ -139,4 +146,9 @@ footer {
   position: sticky;
   bottom: 0;
   width: 100%;
+} */
+
+footer {
+  margin-top: auto;
 }
+
