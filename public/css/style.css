@@ -173,3 +173,14 @@ footer {
   z-index: 2;
 }
 /* end */
+
+/* dashboard linkreview */
+
+.link-review {
+  text-decoration: none;
+}
+.link-review-remove-edit-line {
+  text-decoration: none;
+}
+
+/* end dashboard linkreview */
