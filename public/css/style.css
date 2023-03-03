@@ -14,8 +14,8 @@ body {
   height: 100%;
   overscroll-behavior-y: none;
   min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Nav & Header */
@@ -141,6 +141,25 @@ header {
   font-weight: bold;
   margin-bottom: 10px;
 }
+div.form-group {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+div.form-group.mt-4.mb-0 {
+  padding-bottom: 10px;
+}
+div.card-header {
+  padding: 10px;
+  background-color: #0d6efd;
+  color: #fff;
+  text-shadow: 2px 4px 3px rgb(0, 0, 0, 0.3);
+}
+div.card-body {
+  padding: 10px;
+}
+.card-body-h3 {
+  text-shadow: 2px 4px 3px rgb(0, 0, 0, 0.3);
+}
 /*login page*/
 .login-signup {
   height: 100%;
@@ -157,4 +176,3 @@ header {
 footer {
   margin-top: auto;
 }
-
