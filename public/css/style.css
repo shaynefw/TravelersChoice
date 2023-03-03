@@ -13,6 +13,9 @@
 body {
   height: 100%;
   overscroll-behavior-y: none;
+  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Nav & Header */
@@ -144,6 +147,10 @@ header {
   bottom: 0;
   width: 100%;
 } */
+
+footer {
+  margin-top: auto;
+}
 
 
 
@@ -480,45 +487,7 @@ cursor: pointer;
 /* media queries */
 
 /* Media query for smaller screens */
-@media only screen and (max-width: 768px) {
-.edit_review_container {
-padding: 20px;
-}
 
-.original_review_details {
-font-size: 16px;
-}
-
-.original_review_content {
-font-size: 16px;
-}
-
-.delete_review_button {
-font-size: 16px;
-padding: 8px 16px;
-}
-
-.update_review_label {
-font-size: 16px;
-}
-
-.update_review_select {
-font-size: 14px;
-padding: 8px;
-margin-bottom: 16px;
-}
-
-.update_review_textarea {
-font-size: 14px;
-padding: 8px;
-margin-bottom: 16px;
-}
-
-.update_review_button {
-font-size: 16px;
-padding: 8px 16px;
-}
-}
 
 /* end of media queries */
 
