@@ -114,9 +114,24 @@ header {
 }
 .create_review_section_details {
   border: solid var(--primary) 5px;
+  border-radius: 10px;
   padding: 10px;
   width: 50%;
-  height: 40%;
+  height: 50%;
+}
+.form-create-form-details {
+  background-color: lightgray;
+  width: 100%;
+  padding-left: 10px;
+  padding-top: 20px;
+}
+.btn-submit {
+  margin: 10px;
+}
+.country-label {
+  font-size: medium;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 /*login page*/
 .login-signup {
@@ -289,22 +304,22 @@ footer {
 
 /* Style for the update review textarea */
 .update_review_textarea {
-font-size: 16px;
-padding: 10px;
-margin-bottom: 20px;
-border-radius: 5px;
-border: 2px solid #ccc;
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
 }
 
 /* Style for the update review button */
 .update_review_button {
-font-size: 18px;
-background-color: #64b5f6;
-color: #fff;
-border: none;
-border-radius: 5px;
-padding: 10px 20px;
-cursor: pointer;
+  font-size: 18px;
+  background-color: #64b5f6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 /* Style for the edit review section */
@@ -453,68 +468,67 @@ cursor: pointer;
 
 /* Style for the update review textarea */
 .update_review_textarea {
-font-size: 16px;
-padding: 10px;
-margin-bottom: 20px;
-border-radius: 5px;
-border: 2px solid #ccc;
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: 2px solid #ccc;
 }
 
 /* Style for the update review button */
 .update_review_button {
-font-size: 18px;
-background-color: #64b5f6;
-color: #fff;
-border: none;
-border-radius: 5px;
-padding: 10px 20px;
-cursor: pointer;
+  font-size: 18px;
+  background-color: #64b5f6;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
 }
 
 /* media queries */
 
 /* Media query for smaller screens */
 @media only screen and (max-width: 768px) {
-.edit_review_container {
-padding: 20px;
-}
+  .edit_review_container {
+    padding: 20px;
+  }
 
-.original_review_details {
-font-size: 16px;
-}
+  .original_review_details {
+    font-size: 16px;
+  }
 
-.original_review_content {
-font-size: 16px;
-}
+  .original_review_content {
+    font-size: 16px;
+  }
 
-.delete_review_button {
-font-size: 16px;
-padding: 8px 16px;
-}
+  .delete_review_button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
 
-.update_review_label {
-font-size: 16px;
-}
+  .update_review_label {
+    font-size: 16px;
+  }
 
-.update_review_select {
-font-size: 14px;
-padding: 8px;
-margin-bottom: 16px;
-}
+  .update_review_select {
+    font-size: 14px;
+    padding: 8px;
+    margin-bottom: 16px;
+  }
 
-.update_review_textarea {
-font-size: 14px;
-padding: 8px;
-margin-bottom: 16px;
-}
+  .update_review_textarea {
+    font-size: 14px;
+    padding: 8px;
+    margin-bottom: 16px;
+  }
 
-.update_review_button {
-font-size: 16px;
-padding: 8px 16px;
-}
+  .update_review_button {
+    font-size: 16px;
+    padding: 8px 16px;
+  }
 }
 
 /* end of media queries */
-
 
 /* END OF edit-review css */
