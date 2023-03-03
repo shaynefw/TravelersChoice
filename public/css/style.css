@@ -92,6 +92,11 @@ header {
 /* dashboard reviews handlerbars  */
 .reviews {
   margin: 10px;
+  background-color: #cddff1;
+}
+.reviews-details {
+  font-size: medium;
+  font-weight: bold;
 }
 /* create review handlerbars  */
 .create_review_section {
