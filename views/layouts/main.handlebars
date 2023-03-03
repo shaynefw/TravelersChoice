@@ -29,17 +29,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/dashboard">Dashboard</a>
+            <li class="nav-item mx-1">
+              <button id="dashboard" class="btn btn-primary"><a href="/dashboard" class="text-white text-decoration-none">Dashboard</a></button>
             </li>
             {{#if loggedIn}}
-              <li class="nav-item">
-                <button id="logout" class="btn btn-danger">Logout</button>
-              </li>
+            <li class="nav-item mx-1">
+              <button id="logout" class="btn btn-danger">Logout</button>
+            </li>
             {{else}}
-              <li class="nav-item">
-                <a class="nav-link" href="/login">Login</a>
-              </li>
+            <li class="nav-item">
+              <button id="login" class="btn btn-success"><a href="/login" class="text-white text-decoration-none">Login</a></button>
+            </li>
             {{/if}}
           </ul>
         </div>
