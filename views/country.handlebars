@@ -1,52 +1,21 @@
 
-<style>
-  .country-container {
-    position: relative;
-    align-items: center;
-    background-image: url('.{{country.photo}}');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100%;
-  }
-  .title-container {
-  position: relative;
-  background-color: white;
-  color: black;
-  font-weight: bold;
-  opacity: 0.7;
-  width: 60%;
-  height: 100%;
-  margin: auto;
-  text-align: center;
-  }
-  .review-container {
-  position: relative;
-  overflow: scroll;
-  height: 85%;
-  text-align: left;
-  }
-  .review {
-  border-style: solid;
-  border-width: 2px;
-  border-radius: 10px;
-  padding: 5px;
-  margin: 5px;
-  }
-</style>
 
-<div class="country-container">
-  <div class="title-container">
-    <h1>{{country.name}}</h1>
-    <h2>Reviews about {{country.name}}</h2>
-    <div class="review-container">
+
+<div class="country-container vh-100" style="background-image: url('.{{country.photo}}'); background-repeat: no-repeat; background-size: cover;">
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="card p-4" style="background-color: rgba(255, 255, 255, 0.7);">
+    <h1 class="mb-4">{{country.name}}</h1>
+    <h2 class="mb-4">Reviews about {{country.name}}</h2>
+    <div class="review-container" style="max-height: 500px; overflow-y: auto;">
       {{#each reviews}}
-      <div class="review">
-        <p>Rating: {{rating_stars this.rating}} by {{this.user.username}}</p>
-        <p>Review: {{this.content}}</p>
+      <div class="review p-3 mb-3" style="background-color: rgba(255, 255, 255, 0.9);">
+        <p class="mb-1">{{rating_stars this.rating}} by {{this.user.username}}</p>
+        <p class="mb-0">{{this.content}}</p>
       </div>
       {{/each}}
     </div>
   </div>
+</div>
 
 </div>
+
