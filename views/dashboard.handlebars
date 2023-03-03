@@ -2,15 +2,15 @@
 <section class="new-post-btn-section">
 
   <div class="new-post-btn-section-details">
-    <h2>Share more reviews with us!</h2>
-    <button>
+    <h2 class="title-background">Share more reviews with us!</h2>
+    <button class="create-new-button">
       <a href="/dashboard/review">🆕 Create a new review</a>
     </button>
   </div>
 
   {{#if reviews}}
-  <div class="new-post-btn-section-details">
-    <h2>This is the list of your past reviews!</h2>
+  <div class="new-post-btn-section-detailss">
+    <h2 class="title-background">This is the list of your past reviews!</h2>
     <div>
     {{#each reviews as |review|}}
     {{> dashboard-reviews}}
