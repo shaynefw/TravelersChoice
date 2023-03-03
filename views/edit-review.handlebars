@@ -7,27 +7,19 @@
             <h2 class="text-center font-weight-light my-4">Update / Delete Review</h2>
           </div>
           <div class="card-body">
-            <div class="mb-4">
-              <h4 class="mb-2">This is your original review!</h4>
+            <div class="mb-4 p-2 text-white bg-primary border rounded ">
+              <h4 class="mb-2 text-center">This is your original review!</h4>
               <h5 class="mb-3">Country: {{review.country.name}}</h5>
-              <h5 class="mb-3">Rating: {{review.rating}}{{rating_stars review.rating}}</h5>
-              <p>Review:</p>
-              <p>{{review.content}}</p>
+              <h5 class="mb-3">Rating: {{review.rating}} - {{rating_stars review.rating}}</h5>
+              <h5>Review: {{review.content}}</h5>
               <br>
             </div>
-            <div id="delete-section" class="delete-section">
-              <h4 class="mb-2">🗑️ Would you like to delete this review?</h4>
-              <form class="delete-form">
-                <div class="form-group">
-                  <button class="btn btn-danger btn-block" type="submit">Delete</button>
-                </div>
-              </form>
-            </div>
-            <div class="mt-4">
-              <h4 class="mb-2">🖊️ Would you like to update this review?</h4>
+
+            <div class="mb-4 p-2 text-white bg-secondary border rounded">
+              <h4 class="mb-2 text-center">🖊️ Would you like to update this review?</h4>
               <form class="update-form">
                 <div class="form-group">
-                  <label for="input-country" class="small mb-1">Choose a country:</label>
+                  <label for="input-country" class="my-1">Choose a country:</label>
                   <select class="form-control" id="input-country">
                     {{#each countries as |country|}}
                     {{> dashboard-countries}}
@@ -35,7 +27,7 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="input-rating" class="small mb-1">Rating: 5 to 1</label>
+                  <label for="input-rating" class="my-1">Rating: 5 to 1</label>
                   <select class="form-control" id="input-rating">
                     <option value=5>5 - ★★★★★</option>
                     <option value=4>4 - ★★★★☆</option>
@@ -45,13 +37,22 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="input-review" class="small mb-1">Review</label>
+                  <label for="input-review" class="my-1">Review</label>
                   <textarea class="form-control" id="input-review" name="" rows="2" cols="50"></textarea>
                 </div>
-                <div class="form-group mt-4 mb-0">
-                  <button class="btn btn-primary btn-block" type="submit">Save</button>
+                <div class="form-group mt-4 mb-0 text-center">
+                  <button class="btn btn-light btn-block" type="submit">Save</button>
                 </div>
-                </form>
+              </form>
+            </div>
+
+            <div id="delete-section" class="delete-section p-2 text-white bg-danger border rounded">
+              <h4 class="mb-2 text-center">🗑️ Would you like to delete this review?</h4>
+              <form class="delete-form">
+                <div class="form-group text-center">
+                  <button class="btn btn-light btn-block" type="submit">Delete</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
