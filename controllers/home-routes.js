@@ -16,9 +16,6 @@ router.get('/', async (req, res) => {
     const statTop1 = dbTopCountryData[0][0];
     const statTop2 = dbTopCountryData[0][1];
     const statTop3 = dbTopCountryData[0][2];
-    // const top1 = dbTopCountryData[0][0].country_id;
-    // const top2 = dbTopCountryData[0][1].country_id;
-    // const top3 = dbTopCountryData[0][2].country_id;
 
     const dbReviewTop1Data = await Review.findAll({
       include: [{
@@ -55,17 +52,6 @@ router.get('/', async (req, res) => {
     const countryTop2 = reviewsTop2[0];
     const countryTop3 = reviewsTop3[0];
 
-    // COMMENTING OUR FOR TESTING 
-    console.log(statTop1); // FOR A TEST PURPOSE
-    console.log(statTop2); // FOR A TEST PURPOSE
-    console.log(statTop3); // FOR A TEST PURPOSE
-    console.log(reviewsTop1); // FOR A TEST PURPOSE
-    console.log(reviewsTop2); // FOR A TEST PURPOSE
-    console.log(reviewsTop3); // FOR A TEST PURPOSE
-    console.log(countryTop1); // FOR A TEST PURPOSE
-    console.log(countryTop2); // FOR A TEST PURPOSE
-    console.log(countryTop3); // FOR A TEST PURPOSE
-    // res.status(200).json("Success!");
     res.render('homepage', { statTop1, statTop2, statTop3, reviewsTop1, reviewsTop2, reviewsTop3, countryTop1, countryTop2, countryTop3, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
@@ -99,11 +85,6 @@ router.get('/country/:id', async (req, res) => {
     });
     const reviews = dbReviewData.map((review) => review.get({ plain: true }));
 
-    //console.log(reviews);
-
-    // COMMENTING OUR FOR TESTING 
-    // console.log(reviews);
-    // res.status(200).json("Success!");
     res.render('country', { 
       country: { id: countryId, name: countryName, description: dbCountryData.description, photo: dbCountryData.photo }, 
       reviews, 
@@ -147,9 +128,6 @@ router.get('/dashboard', withAuth, async (req, res) => { // withAuth: only if us
       },
     });
     const reviews = dbReviewData.map((review) => review.get({ plain: true }));
-    // COMMENTING OUR FOR TESTING 
-    // console.log(reviews);
-    // res.status(200).json("Success!");
     res.render('dashboard', { reviews, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
@@ -163,7 +141,6 @@ router.get('/dashboard/review', withAuth, async (req, res) => { // withAuth: onl
   try {
     const countryList = await Country.findAll();
     const countries = countryList.map((country) => country.get({ plain: true }));
-    console.log(countries);
     res.render('create-review', { countries, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
@@ -183,10 +160,6 @@ router.get('/dashboard/review/:id', withAuth, async (req, res) => {  // withAuth
     const countryList = await Country.findAll();
     const review = dbReviewData.get({ plain: true });
     const countries = countryList.map((country) => country.get({ plain: true }));
-    // COMMENTING OUR FOR TESTING 
-    // console.log(review);
-    // res.status(200).json("Success!");
-    console.log(review);
     res.render('edit-review', { review, countries, loggedIn: req.session.loggedIn });
   } catch (err) {
     console.log(err);
@@ -197,8 +170,6 @@ router.get('/dashboard/review/:id', withAuth, async (req, res) => {  // withAuth
 
 // GET for login page ('/login')
 router.get('/login', (req, res) => {
-  // COMMENTING OUR FOR TESTING
-  // res.status(200).json("Success!"); 
   res.render('login', { loggedIn: req.session.loggedIn });
 });
 
