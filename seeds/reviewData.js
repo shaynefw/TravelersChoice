@@ -88,7 +88,7 @@ const reviewData = [
   {
     user_id: 2,
     country_id: 9,
-    content: "In Vancouver, I enjoyed strolling through Stanley Park and taking in the views of the city and the mountains. I also visited Whistler, which was an adventure lover's paradise with its skiing, snowboarding, and zip-lining activities.",
+    content: "In Vancouver, I enjoyed strolling through Stanley Park and taking in the views of the city and the mountains.",
     rating: 4,
   },
   {
@@ -100,7 +100,7 @@ const reviewData = [
   {
     user_id: 3,
     country_id: 5,
-    content: "In Tokyo, I explored the vibrant neighborhoods of Shibuya and Shinjuku, and visited the famous Tsukiji fish market. I also soaked in a traditional Japanese onsen and experienced a tea ceremony, which was a unique and peaceful experience.",
+    content: "In Tokyo, I explored the vibrant neighborhoods of Shibuya and Shinjuku, and visited the famous Tsukiji fish market.",
     rating: 4,
   },
   {
@@ -112,7 +112,7 @@ const reviewData = [
   {
     user_id: 4,
     country_id: 1,
-    content: "I just returned from a trip to Paris and it was everything I had hoped for and more. The art, the food, the architecture - it was all so beautiful and captivating. I especially loved visiting the Louvre and seeing the Mona Lisa in person. A truly unforgettable trip!",
+    content: "The art, the food, the architecture - it was all so beautiful and captivating.",
     rating: 4,
   },
   {
@@ -142,7 +142,7 @@ const reviewData = [
   {
     user_id: 4,
     country_id: 11,
-    content: "In Moscow, I visited the iconic Red Square and St. Basil's Cathedral, and also took a tour of the Kremlin and its fascinating history. I also enjoyed exploring the city's museums and art galleries, like the Tretyakov Gallery, which showcased some of the country's most famous artworks.",
+    content: "In Moscow, I visited the iconic Red Square and St. Basil's Cathedral, and also took a tour of the Kremlin and its fascinating history.",
     rating: 3,
   },
   {
@@ -154,13 +154,13 @@ const reviewData = [
   {
     user_id: 5,
     country_id: 6,
-    content: "Florence was a highlight of my trip, with its beautiful Renaissance art and stunning cathedral. The rolling hills of Tuscany were also a dream come true, with their picturesque vineyards and charming villages.",
+    content: "Florence was a highlight of my trip, with its beautiful Renaissance art and stunning cathedral.",
     rating: 3,
   },
   {
     user_id: 5,
     country_id: 7,
-    content: "In Munich, I visited the famous Marienplatz and enjoyed a beer at a traditional Bavarian beer garden. I also explored the beautiful countryside of Bavaria, with its picturesque villages and rolling hills.",
+    content: "In Munich, I visited the famous Marienplatz and enjoyed a beer at a traditional Bavarian beer garden.",
     rating: 3,
   },
   {
