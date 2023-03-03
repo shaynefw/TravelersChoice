@@ -162,3 +162,14 @@ div.card-body {
 footer {
   margin-top: auto;
 }
+
+/* login and signup  */
+.push-down {
+  padding-top: 12em;
+}
+
+.particle-position {
+  position: relative;
+  z-index: 2;
+}
+/* end */
