@@ -35,6 +35,21 @@ Review.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
+    /*advice: {
+      type: DataTypes.STRING,
+    },
+    year: {
+      type: DataTypes.INTEGER,
+    },
+    month: {
+      type: DataTypes.INTEGER,
+    },
+    length: {
+      type: DataTypes.INTEGER,
+    },
+    group: {
+      type: DataTypes.INTEGER,
+    },*/
   },
   {
     sequelize,
