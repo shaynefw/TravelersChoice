@@ -1,22 +1,37 @@
 {{!-- This is for "/dashboard" --}}
-<section class="new-post-btn-section">
-
-  <div class="new-post-btn-section-details">
-    <h2 class="title-background">Share more reviews with us!</h2>
-    <button class="create-new-button">
-      <a href="/dashboard/review">🆕 Create a new review</a>
-    </button>
-  </div>
-
-  {{#if reviews}}
-  <div class="new-post-btn-section-detailss">
-    <h2 class="title-background">This is the list of your past reviews!</h2>
-    <div>
-    {{#each reviews as |review|}}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-5">
+      <section class="card shadow-lg border-0 rounded-lg mt-5">
+        <div class="card-header"><h3 class="text-center font-weight-light my-4">Share more reviews with us!</h3></div>
+        <div class="card-body">
+          <form class="signup-form">
+            <div class="form-group">
+            <div class="form-group mt-4 mb-0">
+              <button class="btn btn-primary btn-block" type="submit">
+                <a class="link-review"href="/dashboard/review">🆕 
+                Create a new review</a></button>
+            </div>
+          </form>
+        </div>
+      </section>
+       <section class="card shadow-lg border-0 rounded-lg mt-5">
+         {{#if reviews}}
+        <div class="card-header"><h3 class="text-center font-weight-light my-4">This is the list of your past reviews!</h3></div>
+        <div class="card-body">
+          <form class="signup-form">
+            <div class="form-group">
+            <div class="form-group mt-4 mb-0">
+             {{#each reviews as |review|}}
     {{> dashboard-reviews}}
     {{/each}}
+            </div>
+          </form>
+        </div>
+        {{/if}}
+      </section>
+    </div>
     </div>
   </div>
-  {{/if}}
 
-</section>
+<script src="./js/signup.js"></script>

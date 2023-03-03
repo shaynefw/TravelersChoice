@@ -70,36 +70,15 @@ header {
   height: 100%;
 }
 /* dashboard handlerbars */
-.new-post-btn-section {
-  height: 100%;
-  margin-bottom: 10%;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.new-post-btn-section-details {
-  border: solid var(--primary) 5px;
-  padding: 10px;
-  width: 50%;
-  height: 15%;
-  margin-left: 30px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  margin-top: 5em;
-}
-.new-post-btn-section-detailss {
-  border: solid var(--primary) 5px;
-  padding: 10px;
-  width: 50%;
-  height: 100%;
-  margin-left: 30px;
-  border-radius: 10px;
-}
+
 .title-background {
   background-color: var(--primary);
   color: var(--light);
   text-align: center;
   padding: 10px;
+}
+.link-review {
+  color: var(--light);
 }
 .create-new-button {
   display: flex;
@@ -112,7 +91,6 @@ header {
 }
 /* dashboard reviews handlerbars  */
 .reviews {
-  background-color: lightgrey;
   margin: 10px;
 }
 /* create review handlerbars  */
