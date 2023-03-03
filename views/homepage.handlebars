@@ -1,86 +1,52 @@
-{{!--This is for "/" (homepage) --}}
-<div class="container text-center">
-  <div class="row ">
-  <h1 class="border border-primary rounded-top p-3 bg-light">Top 3 Rating Destinations</h1> 
-
-  {{!-- container 1 --}}
-  <div class="col-md-4 align-self-start h-100">
-
-    <div class="country-link">
-      <h2>No.1 Destination: {{countryTop1.country.name}}</h2>
-      <a href="/country/{{statTop1.country_id}}"></a>
+<div class="container-fluid bg-light text-center py-5">
+  <h1 class="mb-5 display-4">Top 3 Rating Destinations</h1> 
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm">
+        <a href="/country/{{statTop1.country_id}}">
+          <img src="{{countryTop1.country.photo}}" class="card-img-top img-fluid">
+        </a>
+        <div class="card-body">
+          <h2 class="card-title h5 mb-3">{{countryTop1.country.name}}</h2>
+          <p class="card-text mb-3">{{countryTop1.country.description}}</p>
+          <h3 class="card-title h6 mb-3">Users rating: {{statTop1.rating}} {{rating_stars statTop1.rating}}</h3>
+          {{#each reviewsTop1 as |top1|}}
+            {{> homepage-reviews}}
+          {{/each}}
+        </div>
+      </div>
     </div>
-
-    <div class="description-box" style="height: 250px; overflow-y: auto;">
-      <p>{{countryTop1.country.description}}</p><br>
-    </div>
-
-    <div class="country-link">
-      <img src="{{countryTop1.country.photo}}"class="img-fluid">
-      <a href="/country/{{statTop1.country_id}}"></a>
-    </div>
-
-    <div>
-      <h3>Users rating: {{statTop1.rating}}</h3>
-      <h3>{{rating_stars statTop1.rating}}</h3>
-      {{#each reviewsTop1 as |top1|}}
-      {{> homepage-reviews}}
-      {{/each}}
-    </div>
-  </div>
-
-  {{!-- container 2 --}}
-  <div class="col-md-4 align-self-start h-100 country-card">
     
-    <div class="country-link">
-      <h2>No.2 Destination: {{countryTop2.country.name}}</h2>
-      <a href="/country/{{statTop2.country_id}}"></a>
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm">
+        <a href="/country/{{statTop2.country_id}}">
+          <img src="{{countryTop2.country.photo}}" class="card-img-top img-fluid">
+        </a>
+        <div class="card-body">
+          <h2 class="card-title h5 mb-3">{{countryTop2.country.name}}</h2>
+          <p class="card-text mb-3">{{countryTop2.country.description}}</p>
+          <h3 class="card-title h6 mb-3">Users rating: {{statTop2.rating}} {{rating_stars statTop2.rating}}</h3>
+          {{#each reviewsTop2 as |top2|}}
+            {{> homepage-reviews}}
+          {{/each}}
+        </div>
+      </div>
     </div>
-
-    <div class="description-box" style="height: 250px; overflow-y: auto;">
-      <p>{{countryTop2.country.description}}</p><br>
+    
+    <div class="col-md-4">
+      <div class="card h-100 border-0 shadow-sm">
+        <a href="/country/{{statTop3.country_id}}">
+          <img src="{{countryTop3.country.photo}}" class="card-img-top img-fluid">
+        </a>
+        <div class="card-body">
+          <h2 class="card-title h5 mb-3">{{countryTop3.country.name}}</h2>
+          <p class="card-text mb-3">{{countryTop3.country.description}}</p>
+          <h3 class="card-title h6 mb-3">Users rating: {{statTop3.rating}} {{rating_stars statTop3.rating}}</h3>
+          {{#each reviewsTop3 as |top3|}}
+            {{> homepage-reviews}}
+          {{/each}}
+        </div>
+      </div>
     </div>
-
-    <div class="country-link">
-      <img src="{{countryTop2.country.photo}}" class="img-fluid">
-      <a href="/country/{{statTop2.country_id}}"></a>
-    </div>
-
-    <div>
-      <h3>Users rating: {{statTop2.rating}}</h3>
-      <h3>{{rating_stars statTop2.rating}}</h3>
-      {{#each reviewsTop2 as |top2|}}
-      {{> homepage-reviews}}
-      {{/each}}
-    </div>
-  </div>
-
-  {{!-- container 3 --}}
-  <div class="col-md-4 align-self-start h-100 country-card">
-
-    <div class="country-link">
-      <h2>No.3 Destination: {{countryTop3.country.name}}</h2>
-      <a href="/country/{{statTop3.country_id}}"></a>
-    </div>
-
-    <div class="description-box" style="height: 250px; overflow-y: auto;">
-      <p>{{countryTop3.country.description}}</p><br>
-    </div>
-
-    <div class="country-link">
-      <img src="{{countryTop3.country.photo}}" class="img-fluid">
-      <a href="/country/{{statTop3.country_id}}"></a>
-    </div>
-
-    <div>
-      <h3>Users rating: {{statTop3.rating}}</h3>
-      <h3>{{rating_stars statTop3.rating}}</h3>
-      {{#each reviewsTop3 as |top3|}}
-      {{> homepage-reviews}}
-      {{/each}}
-    </div>
-  </div>
   </div>
 </div>
-
-
