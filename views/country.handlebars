@@ -2,34 +2,51 @@
 <style>
   .country-container {
     position: relative;
+    align-items: center;
     background-image: url('.{{country.photo}}');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    height: 100%;
+  }
+  .title-container {
+  position: relative;
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  opacity: 0.7;
+  width: 60%;
+  height: 100%;
+  margin: auto;
+  text-align: center;
   }
   .review-container {
-  margin: 20px;
-  border: 2px solid red;
-  background-color: var(--light);
-  color: blue;
   position: relative;
-}
+  overflow: scroll;
+  height: 85%;
+  text-align: left;
+  }
+  .review {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 5px;
+  }
 </style>
 
 <div class="country-container">
-  <div class="country-name">
+  <div class="title-container">
     <h1>{{country.name}}</h1>
-  </div>
-
-  <div class="reviews-container">
     <h2>Reviews about {{country.name}}</h2>
-    {{#each reviews}}
+    <div class="review-container">
+      {{#each reviews}}
       <div class="review">
-        <p>{{this.content}}</p>
-        <p>Rating: {{rating_stars this.rating}}</p>
-        <p>Review by: {{this.user.username}}</p>
+        <p>Rating: {{rating_stars this.rating}} by {{this.user.username}}</p>
+        <p>Review: {{this.content}}</p>
       </div>
-    {{/each}}
+      {{/each}}
+    </div>
   </div>
 
 </div>
