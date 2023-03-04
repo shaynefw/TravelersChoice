@@ -183,7 +183,7 @@ footer {
   text-decoration: none;
 }
 .review-overflow {
-  max-height: 30em;
+  max-height: 40em;
   overflow-y: auto;
 }
 
@@ -195,5 +195,33 @@ footer {
   max-height: 20em; 
   overflow-y: auto;
 }
+
+#homepage-bg-vid {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100vh;
+  min-height: 100vw;
+  object-fit: cover;
+}
+.homepage-z-index {
+  padding-top: 1em;
+  z-index: 1;
+  position: relative;
+  color: white;
+  text-shadow: 2px 2px 4px #000000
+}
+
+.home-card-hover:hover {
+  opacity: 1;
+  box-shadow: none;
+  transition: opacity 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+.home-card-hover {
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: opacity 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
 
 /* end homepage hbs overflow */
