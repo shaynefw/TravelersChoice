@@ -14,6 +14,9 @@
           <h2 class="card-title h5 mb-3">{{countryTop1.country.name}}</h2>
           <p class="card-text mb-3">{{countryTop1.country.description}}</p>
           <h3 class="card-title h6 mb-3">Users rating: {{statTop1.rating}} {{rating_stars statTop1.rating}}</h3>
+          <canvas id="chart1">
+          
+          </canvas>
           <div class="homepage-overflow">
             {{#each reviewsTop1 as |top1|}}
             {{> homepage-reviews}}
@@ -33,6 +36,9 @@
           <h2 class="card-title h5 mb-3">{{countryTop2.country.name}}</h2>
           <p class="card-text mb-3">{{countryTop2.country.description}}</p>
           <h3 class="card-title h6 mb-3">Users rating: {{statTop2.rating}} {{rating_stars statTop2.rating}}</h3>
+          <canvas id="chart2">
+          
+          </canvas>
           <div class="homepage-overflow">
             {{#each reviewsTop2 as |top2|}}
             {{> homepage-reviews}}
@@ -52,6 +58,9 @@
           <h2 class="card-title h5 mb-3">{{countryTop3.country.name}}</h2>
           <p class="card-text mb-3">{{countryTop3.country.description}}</p>
           <h3 class="card-title h6 mb-3">Users rating: {{statTop3.rating}} {{rating_stars statTop3.rating}}</h3>
+          <canvas id="chart2">
+          
+          </canvas>
           <div class="homepage-overflow">
             {{#each reviewsTop3 as |top3|}}
             {{> homepage-reviews}}
@@ -63,3 +72,5 @@
     </div>
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
