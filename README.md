@@ -31,28 +31,34 @@ A travel destination review website is a platform where people can share their e
 
 ## Usage
 
-1.when user is in the home page he/she can see the top 3 rating destination.user can see the rating and people's idea about the destination.
+1. when user is in the home page he/she can see the top 3 rating destination.user can see the rating and people's idea about the destination.
 
 2. when the user is in the main page he/she can click on the top 3 destination to see more details about them.
 
-3.to use more user need to sign up or logged in.
+3. to use more user need to sign up or logged in.
 
-4.if user signed up before, he/she can click on login to logged in.
+4. if user signed up before, he/she can click on login to logged in.
 
-5.if the user wants to sign up when the user is on the log in page we ask them wheather they signed up before or not if the user needed to signed up user should click on newuser?click here for sign up! other than that user can just add username and password and log in.
+5. if the user wants to sign up when the user is on the log in page we ask them wheather they signed up before or not if the user needed to signed up user should click on newuser?click here for sign up! other than that user can just add username and password and log in.
 
-6.if the user wants to sign up user should username and password and sign up.
+6. if the user wants to sign up user should username and password and sign up.
 
 7. when the user logged in, user can click on dashboard and go to his/hers dashboard
 8. when user is in the dashboard user can create new review also user can see the previous reviews.
 
-9.if the user wants to create a review, user can click on create a review and then user will go to the create review page to add review based on 3 options he can chooose a country to write review about give rating from 1to 5 to that country and write down the review and submit.
+9. if the user wants to create a review, user can click on create a review and then user will go to the create review page to add review based on 3 options he can chooose a country to write review about give rating from 1to 5 to that country and write down the review and submit.
 
 10. if the user wants to delete the review, user can click on edit/delete review section and then edit the review and save it or delete the review.
 
-11.when the user wants to logg out the page he or she can click on logout button in the navigation bar to log out. 12. in general user can click on log out and log in and dashboard and traveler's choice in navigation bar to log in and log out and go to dashboard or main page.
+11. when the user wants to logg out the page he or she can click on logout button in the navigation bar to log out. 
+
+12. in general user can click on log out and log in and dashboard and traveler's choice in navigation bar to log in and log out and go to dashboard or main page.
 
 13. if the user wants to know more about us team who made this website he/she can click on our github pages to know more about.
+
+![image](https://user-images.githubusercontent.com/121307266/222857958-326db6ce-95ca-40a3-9bed-c75d1123cf40.png)
+![image](https://user-images.githubusercontent.com/121307266/222858253-e4de7030-cc2a-4373-8030-5fc868545526.png)
+![image](https://user-images.githubusercontent.com/121307266/222858270-4568c289-0e35-457f-ab70-c34e76c0c4d6.png)
 
 ## Credits
 
