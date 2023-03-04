@@ -182,5 +182,18 @@ footer {
 .link-review-remove-edit-line {
   text-decoration: none;
 }
+.review-overflow {
+  max-height: 30em;
+  overflow-y: auto;
+}
 
 /* end dashboard linkreview */
+
+/* homepage hbs overflow */
+
+.homepage-overflow {
+  max-height: 20em; 
+  overflow-y: auto;
+}
+
+/* end homepage hbs overflow */
