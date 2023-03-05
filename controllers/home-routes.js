@@ -10,7 +10,7 @@ const sequelize = require('../config/connection');
 // GET for homepage ('/')
 router.get('/', async (req, res) => {
   try {
-    const dbTopCountryData = await sequelize.query("SELECT ROW_NUMBER() OVER(ORDER BY AVG(rating) DESC) top, country_id, ROUND (AVG(rating),1) AS rating, COUNT(rating) AS count FROM review GROUP BY country_id");          
+    const dbTopCountryData = await sequelize.query("SELECT ROW_NUMBER() OVER(ORDER BY AVG(rating) DESC) top, country_id, ROUND (AVG(rating),1) AS rating, COUNT(rating) AS count, COUNT(CASE rating WHEN 5 THEN 1 ELSE NULL END) AS fivestar, COUNT(CASE rating WHEN 4 THEN 1 ELSE NULL END) AS fourstar, COUNT(CASE rating WHEN 3 THEN 1 ELSE NULL END) AS threestar, COUNT(CASE rating WHEN 2 THEN 1 ELSE NULL END) AS twostar, COUNT(CASE rating WHEN 1 THEN 1 ELSE NULL END) AS onestar, ROUND (COUNT(CASE rating WHEN 5 THEN 1 ELSE NULL END)*100/COUNT(rating)) AS p_fivestar, ROUND (COUNT(CASE rating WHEN 4 THEN 1 ELSE NULL END)*100/COUNT(rating)) AS p_fourstar, ROUND (COUNT(CASE rating WHEN 3 THEN 1 ELSE NULL END)*100/COUNT(rating)) AS p_threestar, ROUND (COUNT(CASE rating WHEN 2 THEN 1 ELSE NULL END)*100/COUNT(rating)) AS p_twostar, ROUND (COUNT(CASE rating WHEN 1 THEN 1 ELSE NULL END)*100/COUNT(rating)) AS p_onestar FROM review GROUP BY country_id");          
     // .get METHOD IS NOT NECESSARY WHEN USING RAW QUERY
     
     const statTop1 = dbTopCountryData[0][0];
