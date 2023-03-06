@@ -21,6 +21,9 @@ body {
 /* Nav & Header */
 .navv {
   /*background-image: url("../images/nav-image/6346166.jpg");*/
+  background-color: #00619f;
+  /* add shadow to bottom of navvv */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 1);
 }
 /* nav {
   margin: 0%;
@@ -161,6 +164,7 @@ div.card-body {
 
 footer {
   margin-top: auto;
+  background-color: #00619f;
 }
 
 /* login and signup  */
